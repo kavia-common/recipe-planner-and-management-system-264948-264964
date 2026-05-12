@@ -1,0 +1,601 @@
+.appRoot {
+  min-height: 100svh;
+  position: relative;
+  z-index: 1;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.14);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+}
+
+.headerInner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 14px 0;
+}
+
+@media (min-width: 860px) {
+  .headerInner {
+    grid-template-columns: 320px 1fr 220px;
+    align-items: center;
+  }
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logoMark {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+
+  color: #0b1220;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.35), rgba(16, 185, 129, 0.25), rgba(245, 158, 11, 0.22));
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  box-shadow: 0 10px 18px rgba(17, 24, 39, 0.12);
+}
+
+.brandTitle {
+  font-weight: 800;
+  line-height: 1.1;
+  font-size: 16px;
+}
+
+.brandSub {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 12px;
+  opacity: 0.72;
+}
+
+.nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.navItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: rgba(255, 255, 255, 0.75);
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: transform 0.08s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.navItem:hover {
+  transform: translateY(-1px);
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+.navItemActive {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.16), rgba(59, 130, 246, 0.06));
+  border-color: rgba(59, 130, 246, 0.5);
+}
+
+.headerActions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+@media (min-width: 860px) {
+  .headerActions {
+    justify-content: flex-end;
+  }
+}
+
+.drawerToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: rgba(255, 255, 255, 0.85);
+  padding: 10px 12px;
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.drawerToggleIcons {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.drawerPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: rgba(59, 130, 246, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 12px;
+}
+
+.drawerToggleText {
+  display: none;
+}
+
+@media (min-width: 420px) {
+  .drawerToggleText {
+    display: inline;
+  }
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+}
+
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 18px 0 26px;
+}
+
+@media (min-width: 1080px) {
+  .mainGrid {
+    grid-template-columns: 1fr 360px;
+    align-items: start;
+  }
+}
+
+.main {
+  min-width: 0;
+}
+
+.panel {
+  padding: 16px;
+}
+
+.panelHeader {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.h1 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+}
+
+.h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.muted {
+  margin: 6px 0 0;
+  opacity: 0.72;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.panelHint {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.searchRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+@media (min-width: 860px) {
+  .searchRow {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}
+
+.searchLabelText {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  opacity: 0.8;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.18);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.06);
+}
+
+.searchActions {
+  display: inline-flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.primaryBtn,
+.secondaryBtn,
+.ghostBtn,
+.favBtn,
+.drawerClose {
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.16);
+  cursor: pointer;
+  font-weight: 800;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.85);
+  transition: transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.primaryBtn:hover,
+.secondaryBtn:hover,
+.ghostBtn:hover,
+.drawerClose:hover {
+  transform: translateY(-1px);
+}
+
+.primaryBtn {
+  background: linear-gradient(180deg, rgba(59, 130, 246, 0.22), rgba(59, 130, 246, 0.10));
+  border-color: rgba(59, 130, 246, 0.45);
+  box-shadow: 0 10px 18px rgba(59, 130, 246, 0.10);
+}
+
+.secondaryBtn {
+  background: linear-gradient(180deg, rgba(16, 185, 129, 0.22), rgba(16, 185, 129, 0.08));
+  border-color: rgba(16, 185, 129, 0.45);
+}
+
+.ghostBtn {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.favBtn {
+  display: grid;
+  place-items: center;
+  padding: 8px;
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.10);
+  border-color: rgba(245, 158, 11, 0.35);
+}
+
+.recipesHeader {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.viewToggles {
+  display: inline-flex;
+  gap: 8px;
+}
+
+.recipeGrid {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 560px) {
+  .recipeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 940px) {
+  .recipeGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.recipeCard {
+  padding: 14px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.recipeTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recipeMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  font-size: 12px;
+  opacity: 0.86;
+}
+
+.minutes {
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px dashed rgba(17, 24, 39, 0.22);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.dotPrimary {
+  background: rgba(59, 130, 246, 0.85);
+}
+
+.tagline {
+  opacity: 0.7;
+}
+
+.recipeTitle {
+  margin: 10px 0 6px;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.recipeDesc {
+  margin: 0;
+  font-size: 13px;
+  opacity: 0.72;
+  line-height: 1.4;
+}
+
+.recipeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(17, 24, 39, 0.14);
+  background: rgba(16, 185, 129, 0.08);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+.recipeActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.calendarPlaceholder {
+  margin-top: 14px;
+  border-radius: 18px;
+  border: 1px dashed rgba(17, 24, 39, 0.25);
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.calendarHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.calendarControls {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.calendarGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+@media (min-width: 680px) {
+  .calendarGrid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+}
+
+.dayCol {
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(59, 130, 246, 0.05);
+  overflow: hidden;
+}
+
+.dayHead {
+  padding: 10px 10px;
+  font-weight: 900;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+  border-bottom: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.dayCell {
+  padding: 10px;
+  display: grid;
+  gap: 8px;
+}
+
+.daySlot {
+  height: 28px;
+  border-radius: 12px;
+  border: 1px dashed rgba(17, 24, 39, 0.2);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.calendarFooter {
+  margin: 12px 0 0;
+  font-size: 13px;
+  opacity: 0.72;
+}
+
+.drawer {
+  min-width: 0;
+}
+
+.drawerInner {
+  padding: 14px;
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.drawerTitle {
+  font-weight: 900;
+}
+
+.drawerSub {
+  margin-top: 4px;
+  font-size: 12px;
+  opacity: 0.72;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    monospace;
+}
+
+.drawerClose {
+  padding: 8px 10px;
+  border-radius: 12px;
+}
+
+.drawerSection {
+  margin-top: 14px;
+}
+
+.sectionHead {
+  margin-bottom: 10px;
+}
+
+.list,
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+  font-size: 13px;
+}
+
+.checkItem {
+  padding: 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(17, 24, 39, 0.12);
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.checkLabel {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 13px;
+}
+
+.drawerActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.footer {
+  padding: 14px 0 22px;
+}
+
+.footerInner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.footerText {
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.adminGrid {
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 780px) {
+  .adminGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.adminCard {
+  padding: 14px;
+  border-radius: 18px;
+}
+
+.drawerOpen {
+  display: block;
+}
+
+.drawerClosed {
+  display: none;
+}
+
+/* On large screens, drawer is always visible (sidebar). */
+@media (min-width: 1080px) {
+  .drawerClosed,
+  .drawerOpen {
+    display: block;
+  }
+}

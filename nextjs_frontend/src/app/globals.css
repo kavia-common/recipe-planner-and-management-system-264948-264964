@@ -1,0 +1,129 @@
+/* Retro-light theme based on style guide colors, with a playful 90s UI vibe. */
+
+:root {
+  --bg: #f9fafb;
+  --surface: #ffffff;
+  --text: #111827;
+
+  --primary: #3b82f6;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --danger: #ef4444;
+
+  --border: rgba(17, 24, 39, 0.14);
+  --shadow: 0 14px 30px rgba(17, 24, 39, 0.12);
+  --shadow-sm: 0 6px 14px rgba(17, 24, 39, 0.12);
+
+  --radius-lg: 18px;
+  --radius-md: 14px;
+  --radius-sm: 12px;
+
+  --font-ui: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: radial-gradient(circle at 15% 10%, rgba(59, 130, 246, 0.12), transparent 45%),
+    radial-gradient(circle at 90% 15%, rgba(16, 185, 129, 0.10), transparent 42%),
+    radial-gradient(circle at 60% 95%, rgba(245, 158, 11, 0.10), transparent 38%),
+    var(--bg);
+  font-family: var(--font-ui);
+}
+
+/* Subtle scanline overlay for a retro feel (kept gentle for readability) */
+body::before {
+  content: "";
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  opacity: 0.06;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(17, 24, 39, 0.35),
+    rgba(17, 24, 39, 0.35) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: multiply;
+  z-index: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(59, 130, 246, 0.6);
+  outline-offset: 2px;
+}
+
+/* Utility-ish classes */
+.container {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.pixel-border {
+  /* A "retro" inner border illusion */
+  box-shadow:
+    0 0 0 2px rgba(17, 24, 39, 0.08) inset,
+    0 0 0 6px rgba(59, 130, 246, 0.08) inset;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(6px);
+  font-size: 12px;
+  line-height: 1;
+  font-family: var(--font-mono);
+}
+
+.kbd {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(17, 24, 39, 0.04);
+}
+
+.hr {
+  height: 1px;
+  background: var(--border);
+  border: none;
+  margin: 12px 0;
+}
